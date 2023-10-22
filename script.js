@@ -7,7 +7,7 @@ function addTask() {
     let value = input.value.trim();
 
     if (value) {
-        warningMessage.style.display = "none"; // Dölj varningen om den tidigare visades
+        warningMessage.style.display = "none";
         let task = {
             id: new Date().getTime(),
             text: value,
@@ -17,7 +17,7 @@ function addTask() {
         renderTasks();
         input.value = "";
     } else {
-        warningMessage.style.display = "block"; // Visa varningsmeddelandet
+        warningMessage.style.display = "block"; 
         input.classList.add("fel");
         setTimeout(() => input.classList.remove("fel"), 500);
     }
