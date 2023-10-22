@@ -1,0 +1,143 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #FFDDEE, #f98181);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: pageLoadAnimation 1s forwards;
+}
+
+@keyframes pageLoadAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+input,
+button {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+input {
+    border: 2px solid #e0e0e0;
+    background-color: #f9f9f9;
+}
+
+input:focus {
+    border-color: rgb(117, 101, 70);
+    box-shadow: 0 0 8px rgba(255, 165, 0, 0.5);
+}
+
+button {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+li.new-task {
+    animation: taskLoadAnimation 0.5s forwards;
+}
+
+@keyframes taskLoadAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.completed {
+    text-decoration: line-through;
+    color: rgb(0, 0, 0);
+    animation: fadeToGray 0.5s forwards;
+}
+
+@keyframes fadeToGray {
+    to {
+        color: gray;
+    }
+}
+
+input.error {
+    animation: flashRed 0.5s forwards;
+}
+
+@keyframes flashRed {
+    0%, 100% {
+        border-color: #e0e0e0;
+    }
+    50% {
+        border-color: red;
+    }
+}
+
+li.deleting {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+li .delete {
+    color: orange;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+li .delete:hover {
+    color: #4922e6;
+}
+
+p#completedCount {
+    margin-top: 10px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
